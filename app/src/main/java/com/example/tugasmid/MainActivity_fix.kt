@@ -3,7 +3,6 @@ package com.example.tugasmid
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,8 +21,8 @@ class MainActivity_fix : AppCompatActivity(){
         setContentView(R.layout.activity_main_fix)
 
         //TODO 04
-        rvMovies = findViewById(R.id.rv_movies)
-        rvMovies.setHasFixedSize(true)
+        rvMovie = findViewById(R.id.rv_movies)
+        rvMovie.setHasFixedSize(true)
         list.addAll(listMovies)
         showRecyclerList()
 
@@ -47,9 +46,9 @@ class MainActivity_fix : AppCompatActivity(){
     //TODO 03
     private fun showRecyclerList() {
         if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            rvMovies.layoutManager = GridLayoutManager(this, 2)
+            rvMovie.layoutManager = GridLayoutManager(this, 2)
         } else {
-            rvMovies.layoutManager = LinearLayoutManager(this)
+            rvMovie.layoutManager = LinearLayoutManager(this)
         }
 
         val listMovieAdapter = DataAdapter(list)
